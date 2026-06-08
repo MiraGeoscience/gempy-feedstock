@@ -2,16 +2,17 @@ schema_version: 1
 
 context:
   name: gempy
-  version: 2025.2.0
-  python_min: 3.10
+  version: "2025.2.1a2.dev16+ga7a5173c6"
+  python_min: "3.12"
 
 package:
   name: ${{ name|lower }}
   version: ${{ version }}
 
 source:
-  url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gempy-${{ version }}.tar.gz
-  sha256: ea2fdf3c8de745122373d23803276b548e899ea0673f0678c5280fb47c6a64b9
+  #url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/gempy-${{ version }}.tar.gz
+  url: https://github.com/gempy-project/gempy/archive/a7a5173c6b6ce75f3af8b7b5acf02bf20c07d385.tar.gz
+  sha256: 68F3017C35C4504ADBA54227A390DA4189C149148382F8C5D82D496106707AA8
 
 build:
   number: 0
@@ -26,7 +27,7 @@ requirements:
     - setuptools-scm
   run:
     - python >=${{ python_min }}
-    - gempy-engine 2025.2.*
+    - gempy-engine >=2025.3.0dev0,<2025.4.0
     - typing_extensions
 
 tests:
