@@ -42,6 +42,7 @@ tests:
         - pandas
         - pooch
         - pytest
+        - pip
     files:
       source:
         - test/
@@ -51,9 +52,6 @@ tests:
     script:
       - pytest test/test_core
       - pip check || pip check | grep "jupyter-core"
-    requirements:
-      run:
-        - pip
 
 about:
   license: EUPL-1.2
